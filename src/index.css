@@ -1,0 +1,181 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* StackIt Design System - Modern Q&A Platform */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 250 100% 99%;
+    --foreground: 220 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 25% 15%;
+
+    --primary: 220 100% 50%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 100% 45%;
+
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 25% 25%;
+
+    --muted: 220 15% 96%;
+    --muted-foreground: 220 10% 50%;
+
+    --accent: 260 100% 96%;
+    --accent-foreground: 260 80% 20%;
+
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 220 100% 50%;
+
+    --radius: 0.75rem;
+
+    /* StackIt Brand Colors */
+    --brand-gradient: linear-gradient(135deg, hsl(220 100% 50%), hsl(260 100% 60%));
+    --brand-glow: 0 10px 40px hsl(220 100% 50% / 0.3);
+    --card-shadow: 0 4px 16px hsl(220 15% 25% / 0.1);
+    --hover-shadow: 0 8px 32px hsl(220 15% 25% / 0.15);
+
+    /* Typography */
+    --font-heading: 'Inter', system-ui, sans-serif;
+    --font-body: 'Inter', system-ui, sans-serif;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 8%;
+    --foreground: 220 15% 95%;
+
+    --card: 220 25% 10%;
+    --card-foreground: 220 15% 95%;
+
+    --popover: 220 25% 10%;
+    --popover-foreground: 220 15% 95%;
+
+    --primary: 220 100% 55%;
+    --primary-foreground: 0 0% 100%;
+    --primary-hover: 220 100% 60%;
+
+    --secondary: 220 15% 15%;
+    --secondary-foreground: 220 15% 85%;
+
+    --muted: 220 15% 12%;
+    --muted-foreground: 220 10% 60%;
+
+    --accent: 260 100% 15%;
+    --accent-foreground: 260 80% 85%;
+
+    --success: 142 76% 45%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 92% 55%;
+    --warning-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 65%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 220 15% 20%;
+    --input: 220 15% 20%;
+    --ring: 220 100% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading font-semibold;
+  }
+}
+
+@layer components {
+  .brand-gradient {
+    background: var(--brand-gradient);
+  }
+
+  .card-shadow {
+    box-shadow: var(--card-shadow);
+  }
+
+  .hover-shadow {
+    box-shadow: var(--hover-shadow);
+  }
+
+  .brand-glow {
+    box-shadow: var(--brand-glow);
+  }
+
+  /* Rich Text Editor Styles */
+  .ql-toolbar {
+    @apply border-border border-b bg-muted/50;
+  }
+
+  .ql-container {
+    @apply border-border;
+  }
+
+  .ql-editor {
+    @apply text-foreground;
+  }
+
+  .ql-editor.ql-blank::before {
+    @apply text-muted-foreground;
+  }
+
+  /* Vote Button Styles */
+  .vote-button {
+    @apply transition-all duration-200 hover:scale-110 active:scale-95;
+  }
+
+  .vote-button.active {
+    @apply text-primary;
+  }
+
+  /* Notification Badge */
+  .notification-badge {
+    @apply absolute -top-1 -right-1 h-4 w-4 rounded-full bg-destructive text-destructive-foreground text-xs flex items-center justify-center animate-pulse;
+  }
+}
